@@ -12,4 +12,12 @@ After you are done, push the source code to a public Git repository and send us 
 
 ## Steps Used for this Demo
 1. Create empty repo
-2. 
+2. Create go mod
+3. Create Angular proj
+4. Add cobra support to main app
+5. Add init backend package files to main app
+6. Created Free-Tier Qdrant online account
+7. Generated API Key
+8. Accessed remote db via managed services
+9. Able to connect to managed db with go-client running on local system
+10. Create static provisioning of PV called qdrant-storage on local K8 cluster
