@@ -21,3 +21,10 @@ After you are done, push the source code to a public Git repository and send us 
 8. Accessed remote db via managed services
 9. Able to connect to managed db with go-client running on local system
 10. Create static provisioning of PV called qdrant-storage on local K8 cluster
+11. Edit the qdrant pvc and modified the 'storageClassName' and 'volumeName' attributes
+12. On 2 different nodes, I installed qdrant source and built code using cargo
+13. Running 2 instance in debug mode and will modify the config file to ensure p2p communication, then replicate it on K8 instances
+14. 2 nodes were configured with p2p functionality
+15. Verified they are running by executing commands:
+    curl auria-20.attlocal.net:6333/cluster | jq  and,
+    curl auria-10.attlocal.net:6333/cluster | jq.

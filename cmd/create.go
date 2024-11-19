@@ -14,6 +14,23 @@ var createCmd = &cobra.Command{
   },
 }
 
+var createCollectionCmd = &cobra.Command {
+  Use: "coll",
+  Short: "create collection",
+  Run: func(cmd *cobra.Command, args []string) {
+    _name, _ := cmd.Flags().GetString("name")
+    _size, _ := cmd.Flags().GetInt("size")
+    _admin.Connect()
+    _admin.CreateCollection(_name, uint64(_size))
+  },
+}
+
 func init() {
+  createCollectionCmd.Flags().StringP("name", "n", "", "foo")
+  createCollectionCmd.Flags().IntP("size", "s", 0, "foo")
+  createCollectionCmd.MarkFlagsRequiredTogether("name","size")
+  createCollectionCmd.MarkFlagRequired("name")
+  createCollectionCmd.MarkFlagRequired("size")
+  createCmd.AddCommand(createCollectionCmd)
   rootCmd.AddCommand(createCmd)
 }
