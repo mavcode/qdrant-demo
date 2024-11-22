@@ -21,7 +21,7 @@ func NewAdmin(c *config.Config) *Admin {
   return &Admin{c:c}
 }
 
-func (a *Admin) ListManagedCollection() {
+func (a *Admin) ListCollection() {
     collections, err := a.client.ListCollections(context.Background())
     if err != nil {
       panic(err)

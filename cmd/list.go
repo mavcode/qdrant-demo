@@ -11,10 +11,10 @@ var listCmd= &cobra.Command{
 
 var listCollectionCmd = &cobra.Command{
   Use: "coll",
-  Short: "list short",
+  Short: "list collection",
   Run: func(cmd *cobra.Command, args []string) {
     _admin.Connect()
-    _admin.ListManagedCollection()
+    _admin.ListCollection()
   },
 }
 

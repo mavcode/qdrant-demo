@@ -8,7 +8,7 @@ import (
 
 var queryCmd = &cobra.Command{
   Use: "query",
-  Short: "hello from query",
+  Short: "query",
   Run: func(cmd *cobra.Command, args []string){
     fmt.Print(qdrant.Ping())
   },
@@ -27,8 +27,8 @@ var queryCollectionCmd = &cobra.Command{
 }
 
 func init() {
-  queryCollectionCmd.Flags().StringP("name", "n", "", "foo")
-  queryCollectionCmd.Flags().StringP("vector", "v", "", "foo")
+  queryCollectionCmd.Flags().StringP("name", "n", "", "name")
+  queryCollectionCmd.Flags().StringP("vector", "v", "", "vector")
   queryCollectionCmd.MarkFlagRequired("name")
   queryCollectionCmd.MarkFlagRequired("vector")
   queryCmd.AddCommand(queryCollectionCmd)

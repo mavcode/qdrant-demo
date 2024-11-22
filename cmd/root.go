@@ -24,9 +24,9 @@ func Execute() {
 
 func init() {
   c := config.NewConfig()
-  rootCmd.PersistentFlags().StringVarP(&c.Host,"host" ,"i", "localhost", "foo")
-  rootCmd.PersistentFlags().StringVarP(&c.APIKey,"key", "k", "", "foo")
-  rootCmd.PersistentFlags().BoolVarP(&c.UseTLS ,"tls", "t", false, "foo")
+  rootCmd.PersistentFlags().StringVarP(&c.Host,"host" ,"i", "localhost", "qdrant db endpoint")
+  rootCmd.PersistentFlags().StringVarP(&c.APIKey,"key", "k", "", "api key")
+  rootCmd.PersistentFlags().BoolVarP(&c.UseTLS ,"tls", "t", false, "tls enabled")
   _c = c
   admin := qdrant.NewAdmin(_c)
   _admin = admin

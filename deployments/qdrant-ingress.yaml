@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: qdrant-demo-ingress
+  annotations: 
+    cert-manager.io/issuer: "qdrant-demo-prod"
+spec:
+  ingressClassName: nginx
+  tls:
+  - hosts:
+    - qdrant-demo.mavcode.io
+    secretName: qdrant-demo-net-tls
+  rules:
+  - host: qdrant-demo.mavcode.io
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: qdrant-1
+            port:
+              number: 6333

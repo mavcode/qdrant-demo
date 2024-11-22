@@ -10,7 +10,7 @@ import (
 
 var uploadCmd = &cobra.Command{
   Use: "upload",
-  Short: "hello from upload",
+  Short: "upload to collection",
   Run: func(cmd *cobra.Command, args []string){
     fmt.Print(qdrant.Ping())
   },

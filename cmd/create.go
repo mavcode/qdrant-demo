@@ -26,8 +26,8 @@ var createCollectionCmd = &cobra.Command {
 }
 
 func init() {
-  createCollectionCmd.Flags().StringP("name", "n", "", "foo")
-  createCollectionCmd.Flags().IntP("size", "s", 0, "foo")
+  createCollectionCmd.Flags().StringP("name", "n", "", "collection name")
+  createCollectionCmd.Flags().IntP("size", "s", 0, "vector size")
   createCollectionCmd.MarkFlagsRequiredTogether("name","size")
   createCollectionCmd.MarkFlagRequired("name")
   createCollectionCmd.MarkFlagRequired("size")

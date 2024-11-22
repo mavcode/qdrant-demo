@@ -8,7 +8,7 @@ import (
 
 var serverCmd = &cobra.Command{
   Use: "server",
-  Short: "short info",
+  Short: "TODO: server",
   Run: func(cmd *cobra.Command, args []string) {
     fmt.Print(server.Ping())
   },
